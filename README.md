@@ -43,7 +43,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | pc4d:native_crs         | String   | **REQUIRED.** The CRS of stored point clouds, e.g., projected CRS                                                                                    |
 | pc4d:datetime           | datetime | **REQUIRED.** Acquired datetime                                                                                                                      |
 | pc4d:tz                 | String   | Time zone, UTC?                                                                                                                                      |
-| pc4d:acquisiton_mode    | String   | e.g., ULS, UPH, TLS                                                                                                                                  |
+| pc4d:acquisition_mode   | String   | e.g., ULS, UPH, TLS                                                                                                                                  |
 | pc4d:duration           | Number   | unit: seconds                                                                                                                                        |
 | pc4d:trajectory         | Array    | List of scan position (X, Y, Z).  **UAV only.**                                                                                                      |
 | pc4d:scan_positions     | Array    | List of scan positions (X, Y, Z)                                                                                                                     |
@@ -53,7 +53,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | pc4d:avg_point_density  | Number   | Avg. point density with given radius                                                                                                                 |
 | pc4d:spatial_resolution | Number   | e.g., sampling interval                                                                                                                              |
 | pc4d:measurement_error  | Number   | System error during measurement or sensor accuracy                                                                                                   |
-| pc4d:global_tranfo      | Array    | Global transformation matrix, e.g., offset                                                                                                           |
+| pc4d:global_transfo     | Array    | Global transformation matrix, e.g., offset                                                                                                           |
 | pc4d:trafometa          | Object   | An object include, could be an object including all relevant meta infomation                                                                         |
 | pc4d:product_info       | Object   | Exists if this item is a generated product. This object describe relavant meta information of the product e.g., parameters used to generate products |
 
@@ -69,13 +69,13 @@ The fields in the table below can be used in these parts of STAC documents:
 | reduction_point       | Array  | A translation vector to apply before applying rotation and scaling. This is used to increase the numerical accuracy of transformation. If a transformation is given, this argument is ignored. |
 
 ### product_info Object
-| Field Name       | Type        | Description                                                                                                            |
-|------------------|-------------|------------------------------------------------------------------------------------------------------------------------|
-| product_name     | String      | e.g., m3c2, DEM, etc                                                                                                   |
-| lastupdate       | datetime    | e.g., generated datetime                                                                                               |
-| param            | object/dict | e.g., product-related parameters                                                                                       |
-| derived_from     | Link        | e.g., the data source                                                                                                  |
-| level of product | String      | e.g., [processing level](https://github.com/stac-extensions/processing?tab=readme-ov-file#suggested-processing-levels) |
+| Field Name    | Type        | Description                                                                                                            |
+|---------------|-------------|------------------------------------------------------------------------------------------------------------------------|
+| product_name  | String      | e.g., m3c2, DEM, etc                                                                                                   |
+| lastupdate    | datetime    | e.g., generated datetime                                                                                               |
+| param         | object/dict | e.g., product-related parameters                                                                                       |
+| derived_from  | Link        | e.g., the data source                                                                                                  |
+| product_level | String      | e.g., [processing level](https://github.com/stac-extensions/processing?tab=readme-ov-file#suggested-processing-levels) |
 
 ## Contributing
 
