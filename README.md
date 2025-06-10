@@ -40,12 +40,12 @@ The fields in the table below can be used in these parts of STAC documents:
 | Field Name              | Type     | Description                                                                                                                                          |
 |-------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | pc4d:sensor             | String   | e.g., Zenmuse L2, Camera                                                                                                                             |
-| pc4d:native_crs         | String   | **REQUIRED.** The CRS of stored point clouds, e.g., projected CRS                                                                                    |
+| pc4d:native_crs         | String   | **REQUIRED.** The spatial reference to apply to the data, e.g., "epsg:32634", [PDAL example](https://pdal.io/en/stable/stages/readers.las.html#options)                                                                                   |
 | pc4d:datetime           | datetime | **REQUIRED.** Acquired datetime                                                                                                                      |
 | pc4d:tz                 | String   | Time zone, UTC?                                                                                                                                      |
 | pc4d:acquisition_mode   | String   | e.g., ULS, UPH, TLS                                                                                                                                  |
 | pc4d:duration           | Number   | unit: seconds                                                                                                                                        |
-| pc4d:trajectory         | Array    | List of scan position (X, Y, Z).  **UAV only.**                                                                                                      |
+| pc4d:trajectory         | Array    | Flight trajectory with timestamps.  **UAV only.**                                                                                                      |
 | pc4d:scan_positions     | Array    | List of scan positions (X, Y, Z)                                                                                                                     |
 | pc4d:orientation        | String   | e.g., nadir, oblique angles                                                                                                                          |
 | pc4d:data_type          | String   | **REQUIRED.** e.g., lidar, image, text                                                                                                               |
@@ -76,6 +76,14 @@ The fields in the table below can be used in these parts of STAC documents:
 | param         | object/dict | e.g., product-related parameters                                                                                       |
 | derived_from  | Link        | e.g., the data source                                                                                                  |
 | product_level | String      | e.g., [processing level](https://github.com/stac-extensions/processing?tab=readme-ov-file#suggested-processing-levels) |
+
+## Todo
+
+- Naming of the extension, topo4d?
+- Adjust json-schema/schema-v0.0.1/json
+- Setup test environment, e.g., by docker
+- Link to use case https://github.com/tum-rsa/4D-WORKS
+- Checklist for contributing: https://github.com/radiantearth/stac-spec/blob/master/CONTRIBUTING.md
 
 ## Contributing
 
