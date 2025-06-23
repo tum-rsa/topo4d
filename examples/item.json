@@ -41,7 +41,8 @@
   "properties": {
     "datetime": "2020-12-11T22:38:32Z",
     "topo4d:native_crs": "EPSG:4326",
-    "topo4d:data_type": "pointcloud"
+    "topo4d:data_type": "pointcloud",
+    "topo4d:tz": "CET +1"
   },
   "links": [
     {

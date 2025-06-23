@@ -78,9 +78,6 @@ The fields in the table below can be used in these parts of STAC documents:
 
 ## Todo
 
-- Naming of the extension, topo4d?
-- Adjust json-schema/schema-v0.0.1/json
-- Setup test environment, e.g., by docker
 - Link to [use case](https://github.com/tum-rsa/4D-WORKS)
 - Checklist for contributing: [contributing guide](https://github.com/radiantearth/stac-spec/blob/master/CONTRIBUTING.md), [stac-extensions: add a new extension](https://stac-extensions.github.io/#adding-a-new-extension)
 

@@ -173,11 +173,12 @@
         "topo4d:native_crs": {
           "type": "string"
         },
-        "topo4d:datetime": {
-          "type": "string"
-        },
         "topo4d:data_type": {
           "type": "string"
+        },
+        "topo4d:tz":{
+          "type": "string",
+          "description": "The timezone of the data"
         }
       },
       "patternProperties": {
