@@ -132,25 +132,29 @@
           "required": [
             "summaries"
           ],
-          "properties": {            "summaries": {
+          "properties": {              "summaries": {
               "type": "object",
-              "properties": {
-                "num_items": {
-                  "type": "integer",
-                  "description": "Number of items"
-                },
-                "timestamp_list": {
-                  "type": "array",
-                  "description": "List of datetime values"
-                },
-                "temporal_resolution": {
-                  "type": "string",
-                  "description": "Temporal resolution of multiple acquisition (e.g., monthly, weekly, 1hr)"
-                },
-                "attribute_list": {
-                  "type": "array",
-                  "description": "List of attributes, e.g., [intensity, R, G, B, cls_label]"
-                }
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "minimum": {},
+                      "maximum": {}
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "values": {
+                        "type": "array"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array"
+                  }
+                ]
               }
             }
           }

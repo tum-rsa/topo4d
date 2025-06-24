@@ -42,7 +42,141 @@
     "datetime": "2020-12-11T22:38:32Z",
     "topo4d:native_crs": "EPSG:4326",
     "topo4d:data_type": "pointcloud",
-    "topo4d:tz": "CET +1"
+    "topo4d:tz": "CET +1",
+    "topo4d:sensor": "Zenmuse L2",
+    "topo4d:acquisition_mode": "ULS",
+    "topo4d:duration": 120.5,
+    "topo4d:trajectory": [
+      {
+        "position": [
+          172.92,
+          1.35,
+          50
+        ],
+        "timestamp": "2020-12-11T22:35:12Z"
+      },
+      {
+        "position": [
+          172.95,
+          1.36,
+          50
+        ],
+        "timestamp": "2020-12-11T22:36:48Z"
+      },
+      {
+        "position": [
+          172.97,
+          1.38,
+          50
+        ],
+        "timestamp": "2020-12-11T22:38:24Z"
+      }
+    ],
+    "topo4d:scan_positions": [
+      [
+        172.92,
+        1.35,
+        0
+      ],
+      [
+        172.95,
+        1.36,
+        0
+      ],
+      [
+        172.97,
+        1.38,
+        0
+      ]
+    ],
+    "topo4d:orientation": "nadir",
+    "topo4d:point_count": 1250000,
+    "topo4d:avg_point_density": 25.3,
+    "topo4d:spatial_resolution": 0.05,
+    "topo4d:measurement_error": 0.03,
+    "topo4d:global_transfo": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "topo4d:trafometa": {
+      "reference_epoch": "./reference_item.json",
+      "registration_error": 0.012,
+      "affine_transformation": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "reduction_point": [
+        172.9,
+        1.3,
+        0
+      ]
+    }
   },
   "links": [
     {
@@ -52,7 +186,35 @@
   ],
   "assets": {
     "data": {
-      "href": "https://example.com/examples/file.xyz"
+      "href": "https://example.com/examples/file.xyz",
+      "type": "application/octet-stream",
+      "title": "Point Cloud Data",
+      "description": "Raw point cloud data in XYZ format",
+      "roles": [
+        "data"
+      ],
+      "topo4d:data_type": "pointcloud",
+      "topo4d:native_crs": "EPSG:4326"
+    },
+    "derived": {
+      "href": "https://example.com/examples/derived.tif",
+      "type": "image/tiff",
+      "title": "Derived Product",
+      "description": "DEM derived from point cloud",
+      "roles": [
+        "derived"
+      ],
+      "topo4d:product_info": {
+        "product_name": "DEM",
+        "lastupdate": "2021-02-15T08:30:00.000Z",
+        "param": {
+          "resolution": 0.1,
+          "algorithm": "IDW",
+          "filter": "vegetation removed"
+        },
+        "derived_from": "https://example.com/examples/file.xyz",
+        "product_level": "L3"
+      }
     }
   }
 }

@@ -30,9 +30,14 @@
     }
   },
   "assets": {
-    "example": {
-      "href": "https://example.com/examples/file.xyz",
-      "topo4d:new_field": "test"
+    "metadata": {
+      "href": "https://example.com/examples/metadata.json",
+      "type": "application/json",
+      "title": "Collection Metadata",
+      "description": "Metadata for the entire 4D point cloud collection",
+      "roles": [
+        "metadata"
+      ]
     }
   },
   "item_assets": {
@@ -40,13 +45,46 @@
       "roles": [
         "data"
       ],
-      "topo4d:new_field": "test"
+      "type": "application/octet-stream",
+      "title": "Point Cloud Data",
+      "description": "Template for point cloud data assets",
+      "topo4d:data_type": "pointcloud",
+      "topo4d:native_crs": "EPSG:4326"
+    },
+    "trajectory": {
+      "roles": [
+        "metadata"
+      ],
+      "type": "application/json",
+      "title": "Trajectory Data",
+      "description": "Flight trajectory information"
     }
   },
   "summaries": {
-    "datetime": {
-      "minimum": "2015-06-23T00:00:00Z",
-      "maximum": "2019-07-10T13:44:56Z"
+    "num_items": {
+      "minimum": 42,
+      "maximum": 42
+    },
+    "timestamp_list": {
+      "values": [
+        "2015-06-23T00:00:00Z",
+        "2017-01-15T12:30:45Z",
+        "2019-07-10T13:44:56Z"
+      ]
+    },
+    "temporal_resolution": {
+      "values": [
+        "monthly"
+      ]
+    },
+    "attribute_list": {
+      "values": [
+        "intensity",
+        "R",
+        "G",
+        "B",
+        "cls_label"
+      ]
     }
   },
   "links": [
