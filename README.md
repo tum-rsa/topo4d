@@ -60,7 +60,7 @@ The fields in the table below can be used in these parts of STAC documents:
 
 | Field Name | Type   | Description                                  |
 | ---------- | ------ | -------------------------------------------- |
-| reference_epoch       | Link   | e.g., link to other item |
+| reference_epoch       | Link   | **REQUIRED.** e.g., link to other item |
 | registration_error    | Number | Exists if it's a co-registered point cloud |
 | affine_transformation | Array  | A 4x4 or 3x4 matrix representing the affine transformation. Given as a numpy array. If this argument is given, the rotation and translation arguments are ignored. |
 | rotation              | Array  | A 3x3 matrix specifying the rotation to apply |
