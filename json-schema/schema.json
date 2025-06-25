@@ -132,7 +132,8 @@
           "required": [
             "summaries"
           ],
-          "properties": {              "summaries": {
+          "properties": {              
+            "summaries": {              
               "type": "object",
               "additionalProperties": {
                 "anyOf": [
@@ -302,7 +303,8 @@
               "description": "e.g., processing level"
             }
           }
-        },        "num_items": {
+        },        
+        "num_items": {
           "type": "integer",
           "description": "Number of items (Collection Summary field)"
         },

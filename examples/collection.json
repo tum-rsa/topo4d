@@ -62,8 +62,9 @@
   },
   "summaries": {
     "num_items": {
-      "minimum": 42,
-      "maximum": 42
+      "values": [
+        3
+      ]
     },
     "timestamp_list": {
       "values": [
