@@ -228,10 +228,6 @@
           "type": "integer",
           "description": "Number of points"
         },
-        "topo4d:avg_point_density": {
-          "type": "number",
-          "description": "Average point density with given radius"
-        },
         "topo4d:spatial_resolution": {
           "type": "number",
           "description": "The spatial resolution, e.g., sampling interval"
@@ -240,7 +236,7 @@
           "type": "number",
           "description": "System error during measurement or sensor accuracy"
         },
-        "topo4d:global_transfo": {
+        "topo4d:global_trafo": {
           "type": "array",
           "description": "Global transformation matrix, e.g., offset"
         },
@@ -257,6 +253,10 @@
             "registration_error": {
               "type": "number",
               "description": "Exists if it's a co-registered point cloud"
+            },
+            "transformation": {
+              "type": "array",
+              "description": "Given as a numpy array."
             },
             "affine_transformation": {
               "type": "array",
