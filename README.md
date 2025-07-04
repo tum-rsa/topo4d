@@ -7,8 +7,13 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @tum-rsa
 
-This document explains the topo4d Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-This extension develops a standardized approach for handling time-dependent metadata in dense 3D time series (4D) point cloud datasets.
+This document explains the topo4d Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the 4D-WORKS project (Development of Standardized Metadata for 3D Time Series Workflows).
+
+This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D data). While it includes support for point clouds, it is designed to be broadly applicable to various types of 4D geospatial data including photogrammetry, and multi-sensor integrated datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist without consistent standards for critical time-dependent information like timestamps and transformation matrices.
+
+By standardizing metadata formats, this extension makes 4D datasets more accessible, interoperable, and reusable across different projects and tools, regardless of data sources, acquisition techniques, or temporal sampling intervals. The extension supports automated metadata generation for workflows in fields such as geomorphology, hydrology, ecology, and other disciplines requiring time-series analysis of 3D spatial data.
+
+This work is funded by the German Research Foundation (DFG) in the frame of the National Research Data Infrastructure program (NFDI4Earth). For more information about the complete 4D-WORKS project, please visit our [project homepage](https://www.asg.ed.tum.de/en/rsa/research/4d-works/).
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
@@ -41,7 +46,7 @@ The fields in the table below can be used in these parts of STAC documents:
 |---------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | datetime                  | String  | **REQUIRED.** Time of data collection                                                                                                                                           |
 | topo4d:data_type          | String  | **REQUIRED.** e.g., lidar, image, text                                                                                                                                          |
-| topo4d:native_crs         | String  | **REQUIRED.** The spatial reference to apply to the data, e.g., "epsg:32634 ([PDAL example](https://pdal.io/en/stable/stages/readers.las.html#options))", "local", "undefined". |
+| topo4d:native_crs         | String  | **REQUIRED.** The spatial reference to apply to the data, e.g., "EPSG:32634 ([PDAL example](https://pdal.io/en/stable/stages/readers.las.html#options))", "local", "undefined". |
 | topo4d:sensor             | String  | e.g., Zenmuse L2, Camera                                                                                                                                                        |
 | topo4d:tz                 | String  | Time zone (UTC offset), e.g. UTC+1                                                                                                                                              |
 | topo4d:acquisition_mode   | String  | e.g., ULS, UPH, TLS                                                                                                                                                             |
