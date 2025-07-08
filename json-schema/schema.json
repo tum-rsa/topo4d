@@ -276,7 +276,7 @@
             }
           }
         },
-        "topo4d:product_info": {
+        "topo4d:productmeta": {
           "type": "object",
           "description": "Exists if this item is a generated product",
           "properties": {

@@ -203,7 +203,7 @@
       "roles": [
         "derived"
       ],
-      "topo4d:product_info": {
+      "topo4d:productmeta": {
         "product_name": "DEM",
         "lastupdate": "2021-02-15T08:30:00.000Z",
         "param": {
