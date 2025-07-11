@@ -133,30 +133,16 @@
             "summaries"
           ],
           "properties": {              
-            "summaries": {              
-              "type": "object",
-              "additionalProperties": {
-                "anyOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "minimum": {},
-                      "maximum": {}
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "values": {
-                        "type": "array"
-                      }
-                    }
-                  },
-                  {
-                    "type": "array"
-                  }
-                ]
-              }
+            "summaries": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CollectionSummaryFields"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              ]
             }
           }
         }
@@ -246,7 +232,7 @@
           "required": ["reference_epoch"],
           "properties": {            
             "reference_epoch": {
-              "type": "string",
+              "type": "object",
               "format": "uri-reference",
               "description": "Link to another item or resource representing the reference epoch"
             },
@@ -286,7 +272,6 @@
             },            
             "lastupdate": {
               "type": "string",
-              "format": "date-time",
               "description": "Generated datetime"
             },
             "param": {
@@ -303,7 +288,20 @@
               "description": "e.g., processing level"
             }
           }
-        },        
+        }
+      },
+      "patternProperties": {
+        "^(?!topo4d:)": {
+          "$comment": "Above, change `template` to the prefix of this extension"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CollectionSummaryFields": {
+      "description": "Fields that are mandatory under the Collection summaries.",
+      "type": "object",
+      "required": [],
+      "properties": {
         "num_items": {
           "type": "integer",
           "description": "Number of items (Collection Summary field)"
@@ -319,19 +317,8 @@
         "attribute_list": {
           "type": "array",
           "description": "List of attributes, e.g., [intensity, R, G, B, cls_label] (Collection Summary field)"
-        },
-        "datetime": {
-          "type": "string",
-          "format": "date-time",
-          "description": "The date and time of the item (ISO 8601 format) (Item Property - REQUIRED)"
         }
-      },
-      "patternProperties": {
-        "^(?!topo4d:)": {
-          "$comment": "Above, change `template` to the prefix of this extension"
-        }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }

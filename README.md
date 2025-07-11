@@ -38,50 +38,48 @@ The fields in the table below can be used in these parts of STAC documents:
 | num_items           | Integer | Number of items                                                         |
 | timestamp_list      | Array   | list of datetime                                                        |
 | temporal_resolution | String  | Temporal resolution of multiple acquisiton (e.g., monthly, weekly, 1hr) |
-| attribute_list      | Array   | List of attributes, e.g., [intensity, R, G, B, cls_label]               |
 
 ### Item Properties
 
-| Field Name                | Type    | Description                                                                                                                                                                     |
-|---------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| datetime                  | String  | **REQUIRED.** Time of data collection                                                                                                                                           |
-| topo4d:data_type          | String  | **REQUIRED.** e.g., lidar, image, text                                                                                                                                          |
-| topo4d:native_crs         | String  | **REQUIRED.** The spatial reference to apply to the data, e.g., "EPSG:32634 ([PDAL example](https://pdal.io/en/stable/stages/readers.las.html#options))", "local", "undefined". |
-| topo4d:sensor             | String  | e.g., Zenmuse L2, Camera                                                                                                                                                        |
-| topo4d:tz                 | String  | Time zone (UTC offset), e.g. UTC+1                                                                                                                                              |
-| topo4d:acquisition_mode   | String  | e.g., ULS, UPH, TLS                                                                                                                                                             |
-| topo4d:duration           | Number  | The time duration of the measurement                                                                                                                                                                   |
-| topo4d:trajectory         | Array   | Flight trajectory with timestamps.  **UAV only.**                                                                                                                               |
-| topo4d:scan_positions     | Array   | List of scan positions (X, Y, Z)                                                                                                                                                |
-| topo4d:orientation        | String  | e.g., nadir, oblique angles                                                                                                                                                     |
-| topo4d:point_count        | Integer | Number of points                                                                                                                                                                |
-| topo4d:spatial_resolution | Number  | e.g., sampling interval                                                                                                                                                         |
-| topo4d:measurement_error  | Number  | System error during measurement or sensor accuracy                                                                                                                              |
-| topo4d:global_trafo       | Array   | Global transformation matrix, e.g., offset                                                                                                                                      |
-| topo4d:trafometa          | Object  | An object include, could be an object including all relevant meta infomation                                                                                                    |
-| topo4d:productmeta       | Object  | Exists if this item is a generated product. This object describe relavant meta information of the product e.g., parameters used to generate products                            |
+| Field Name                | Type    | Description  |
+|---------------------------|---------|--------------------------------|
+| datetime                  | String  | **REQUIRED.** Timestamp of data collection |
+| topo4d:data_type          | String  | **REQUIRED.** The type of data, e.g., pointcloud, mesh, raster, vector, text |
+| topo4d:native_crs         | String  | **REQUIRED.** The spatial reference to apply to the data, e.g., "EPSG:32634 ([PDAL example](https://pdal.io/en/stable/stages/readers.las.html#options))", "Local", "Undefined". |
+| topo4d:sensor             | String  | e.g., Zenmuse L2, Camera |
+| topo4d:tz                 | String  | The timezone of the data. It can be the string like "UTC+1" or "Europe/Munich" |
+| topo4d:acquisition_mode   | String  | The mode of acquisition, e.g., ULS, UPH, TLS" |
+| topo4d:duration           | Number  | The time duration of the measurement  |
+| topo4d:trajectory         | Array   | Flight trajectory with timestamps.  **UAV only.** |
+| topo4d:scan_positions     | Array   | List of scan positions (X, Y, Z) |
+| topo4d:orientation        | String  | The orientation of the scan, e.g., nadir, oblique, mixed |
+| topo4d:point_count        | Integer | Number of points |
+| topo4d:spatial_resolution | Number  | The spatial resolution, e.g., sampling interval |
+| topo4d:measurement_error  | Number  | System error during measurement or sensor accuracy |
+| topo4d:global_trafo       | Array   | Global transformation matrix, e.g., offset|
+| topo4d:trafometa          | Object  | An object including all relevant meta information for transformation |
+| topo4d:productmeta       | Object  | Exists if this item is a generated product. This object describe relavant meta information of the product e.g., parameters used to generate products |
 
 ### trafometa Object
 
-| Field Name            | Type   | Description                                                                                                                                                                                    |
-|-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| reference_epoch       | Link   | **REQUIRED.** e.g., link to other item                                                                                                                                                         |
-| registration_error    | Number | Exists if it's a co-registered point cloud                                                                                                                                                     |
-| transformation        | Array  | A transformation object that describes the transformation to apply. If this is given, the other arguments are ignored.                                                                         |
-| affine_transformation | Array  | A 4x4 or 3x4 matrix representing the affine transformation. Given as a numpy array. If this argument is given, the rotation and translation arguments are ignored.                             |
-| rotation              | Array  | A 3x3 matrix specifying the rotation to apply                                                                                                                                                  |
-| translation           | Array  | A vector specifying the translation to apply                                                                                                                                                   |
+| Field Name            | Type   | Description  |
+|-----------------------|--------|------------------------------------|
+| reference_epoch       | Object/Link | **REQUIRED.** e.g., link to other item |
+| registration_error    | Number | Exists if it's a co-registered point cloud  |
+| transformation        | Array  | A transformation object that describes the transformation to apply. If this is given, the other arguments are ignored. |
+| affine_transformation | Array  | A 4x4 or 3x4 matrix representing the affine transformation. Given as a numpy array. If this argument is given, the rotation and translation arguments are ignored. |
+| rotation              | Array  | A 3x3 matrix specifying the rotation to apply    |
+| translation           | Array  | A vector specifying the translation to apply |
 | reduction_point       | Array  | A translation vector to apply before applying rotation and scaling. This is used to increase the numerical accuracy of transformation. If a transformation is given, this argument is ignored. |
 
 ### productmeta Object
-| Field Name    | Type        | Description                                                                                                            |
-|---------------|-------------|------------------------------------------------------------------------------------------------------------------------|
-| product_name  | String      | e.g., m3c2, DEM, etc                                                                                                   |
-| lastupdate    | datetime    | e.g., generated datetime                                                                                               |
-| param         | object/dict | e.g., product-related parameters                                                                                       |
-| derived_from  | Link        | e.g., the data source                                                                                                  |
+| Field Name    | Type        | Description  |
+|---------------|-------------|---------------------|
+| product_name  | String      | e.g., m3c2, DEM, etc  |
+| lastupdate    | String    | e.g., generated datetime   |
+| param         | Object/Dict | e.g., product-related parameters   |
+| derived_from  | Object/Link | e.g., the data source   |
 | product_level | String      | e.g., [processing level](https://github.com/stac-extensions/processing?tab=readme-ov-file#suggested-processing-levels) |
-
 
 ## Contributing
 
