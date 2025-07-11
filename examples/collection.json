@@ -62,29 +62,20 @@
   },
   "summaries": {
     "num_items": {
-      "values": [
+      "count": [
         3
       ]
     },
     "timestamp_list": {
-      "values": [
+      "list": [
         "2015-06-23T00:00:00Z",
         "2017-01-15T12:30:45Z",
         "2019-07-10T13:44:56Z"
       ]
     },
     "temporal_resolution": {
-      "values": [
+      "resolution": [
         "monthly"
-      ]
-    },
-    "attribute_list": {
-      "values": [
-        "intensity",
-        "R",
-        "G",
-        "B",
-        "cls_label"
       ]
     }
   },

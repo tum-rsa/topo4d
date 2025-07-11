@@ -1,0 +1,138 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+  ],
+  "id": "161112_030107",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4.234684759102488,
+          52.060836007550314
+        ],
+        [
+          4.234684759102488,
+          52.08179097718481
+        ],
+        [
+          4.20182161183681,
+          52.08179097718481
+        ],
+        [
+          4.20182161183681,
+          52.060836007550314
+        ],
+        [
+          4.234684759102488,
+          52.060836007550314
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    4.20182161183681,
+    52.060836007550314,
+    4.234684759102488,
+    52.08179097718481
+  ],
+  "properties": {
+    "topo4d:tz": "Europe/Amsterdam",
+    "topo4d:native_crs": "EPSG:7415",
+    "topo4d:data_type": "pointcloud",
+    "topo4d:sensor": "RIEGL VZ2000",
+    "topo4d:global_trafo": [
+      [
+        0.708647477,
+        0.705554059,
+        0.003496133,
+        75124.664999332
+      ],
+      [
+        -0.705561978,
+        0.708645222,
+        0.002060151,
+        454173.49757747503
+      ],
+      [
+        -0.00102397,
+        -0.003926659,
+        0.999991766,
+        37.853088875
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "topo4d:trafometa": {
+      "reference_epoch": {
+        "rel": "161111_200058",
+        "href": "c:/Users/jiapan/02_projects/2025_4DWORKS/4D-WORKS/demo/kijkduin/data/161111_200058.json",
+        "type": "application/json",
+        "title": "Reference Epoch"
+      },
+      "transformation": [
+        [
+          0.9999999933952847,
+          -0.000030531963200283086,
+          -0.00011080266253053227,
+          -0.00008539601874179399
+        ],
+        [
+          0.00003052263596212586,
+          0.9999999959910865,
+          -0.00008417954169642884,
+          -0.0001492095651050225
+        ],
+        [
+          0.00011080523225300323,
+          0.00008417615915111486,
+          0.9999999903182875,
+          -0.00010482702510638647
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "datetime": "2016-11-12T03:01:07Z"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Kijkduin TLS Point Clouds Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Kijkduin TLS Point Clouds Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Kijkduin TLS Point Clouds Collection"
+    }
+  ],
+  "assets": {
+    "pointcloud": {
+      "href": "../demo/kijkduin/data/161112/161112_030107.laz",
+      "type": "application/vnd.laszip+copc",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "Kijkduin"
+}

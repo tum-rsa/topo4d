@@ -1,0 +1,72 @@
+{
+  "type": "Collection",
+  "id": "Isar_pointclouds_collection",
+  "stac_version": "1.1.0",
+  "description": "### Isar Point Clouds Collection\n\nA collection of m3c2 distances from Isar riverbank, near Wallgau, Germany.\n",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "item",
+      "href": "./Isar_m3c2_20240812_20241105_10cm.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./Isar_m3c2_20240812_20250325_10cm.json",
+      "type": "application/geo+json"
+    }
+  ],
+  "title": "Isar Point Clouds Collection",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          11.304866670991222,
+          47.52637673872775,
+          11.31637632165577,
+          47.53158992279433
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-11-05T00:00:00Z",
+          "2025-03-25T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "TUM Remote Sensing Applications",
+      "roles": [
+        "processor",
+        "producer",
+        "licensor",
+        "host"
+      ],
+      "url": "https://www.asg.ed.tum.de/rsa/startseite/"
+    }
+  ],
+  "summaries": {
+    "num_items": {
+      "count": 2
+    },
+    "timestamp_list": {
+      "list": [
+        "2024-11-05T00:00:00",
+        "2025-03-25T00:00:00"
+      ]
+    },
+    "temporal_resolution": {
+      "resolution": "half-annual"
+    }
+  }
+}

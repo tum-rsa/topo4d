@@ -1,0 +1,115 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+  ],
+  "id": "Isar_20240812_UPH_10cm",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          11.316376321635966,
+          47.52637673872775
+        ],
+        [
+          11.316376321635966,
+          47.53158992234481
+        ],
+        [
+          11.304866670991222,
+          47.53158992234481
+        ],
+        [
+          11.304866670991222,
+          47.52637673872775
+        ],
+        [
+          11.316376321635966,
+          47.52637673872775
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    11.304866670991222,
+    47.52637673872775,
+    11.316376321635966,
+    47.53158992234481
+  ],
+  "properties": {
+    "topo4d:tz": "UTC+1",
+    "topo4d:native_crs": "EPSG:25832",
+    "topo4d:data_type": "pointcloud",
+    "topo4d:sensor": "DJI Phantom 4 RTK",
+    "topo4d:orientation": "Nadir",
+    "topo4d:spatial_resolution": 0.1,
+    "topo4d:measurement_error": 0.04,
+    "topo4d:trafometa": {
+      "reference_epoch": {
+        "rel": "Isar_20241105_UPH_10cm",
+        "href": "c:/Users/jiapan/02_projects/2025_4DWORKS/4D-WORKS/demo/Isar/data/Isar_pointclouds/Isar_20241105_UPH_10cm.json",
+        "type": "application/json",
+        "title": "Reference Epoch"
+      },
+      "transformation": [
+        [
+          1,
+          -0.000013,
+          -0.000225,
+          0.195904
+        ],
+        [
+          0.000013,
+          1,
+          -0.000156,
+          0.14175
+        ],
+        [
+          0.000225,
+          0.000156,
+          1,
+          -0.047578
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "datetime": "2024-08-12T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    }
+  ],
+  "assets": {
+    "pointcloud": {
+      "href": "./Isar_20240812_UPH_10cm.copc.laz",
+      "type": "application/vnd.laszip+copc",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "Isar_pointclouds_collection"
+}

@@ -1,0 +1,228 @@
+{
+  "type": "Collection",
+  "id": "Kijkduin",
+  "stac_version": "1.1.0",
+  "description": "### Kijkduin TLS Point Clouds Collection\n\nA collection of point cloud from Kijkduin Sandy Beach, The Netherland.\n",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Kijkduin TLS Point Clouds Collection"
+    },
+    {
+      "rel": "item",
+      "href": "./161111_200058.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161111_210058.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161111_220103.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161111_230104.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_000104.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_010104.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_020106.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_030107.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_040108.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_050109.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_060112.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_070110.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_080111.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_090111.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_100112.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_110113.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_120115.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_130115.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_140116.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_150118.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_160118.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_170118.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_180119.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_190130.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_200120.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_210121.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_220123.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./161112_230123.json",
+      "type": "application/geo+json"
+    }
+  ],
+  "title": "Kijkduin TLS Point Clouds Collection",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.197016592792564,
+          52.059182481715176,
+          4.238527655962627,
+          52.08538506475349
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2016-11-11T20:00:58Z",
+          "2016-11-12T23:01:23Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "TU Delft",
+      "roles": [
+        "processor",
+        "producer",
+        "licensor",
+        "host"
+      ],
+      "url": "https://coastscan.citg.tudelft.nl/"
+    }
+  ],
+  "summaries": {
+    "num_items": {
+      "count": 28
+    },
+    "timestamp_list": {
+      "list": [
+        "2016-11-11T20:00:58",
+        "2016-11-11T21:00:58",
+        "2016-11-11T22:01:03",
+        "2016-11-11T23:01:04",
+        "2016-11-12T00:01:04",
+        "2016-11-12T01:01:04",
+        "2016-11-12T02:01:06",
+        "2016-11-12T03:01:07",
+        "2016-11-12T04:01:08",
+        "2016-11-12T05:01:09",
+        "2016-11-12T06:01:12",
+        "2016-11-12T07:01:10",
+        "2016-11-12T08:01:11",
+        "2016-11-12T09:01:11",
+        "2016-11-12T10:01:12",
+        "2016-11-12T11:01:13",
+        "2016-11-12T12:01:15",
+        "2016-11-12T13:01:15",
+        "2016-11-12T14:01:16",
+        "2016-11-12T15:01:18",
+        "2016-11-12T16:01:18",
+        "2016-11-12T17:01:18",
+        "2016-11-12T18:01:19",
+        "2016-11-12T19:01:30",
+        "2016-11-12T20:01:20",
+        "2016-11-12T21:01:21",
+        "2016-11-12T22:01:23",
+        "2016-11-12T23:01:23"
+      ]
+    },
+    "temporal_resolution": {
+      "resolution": "1 hour"
+    }
+  }
+}

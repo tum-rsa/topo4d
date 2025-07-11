@@ -1,0 +1,87 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+  ],
+  "id": "Isar_m3c2_20240812_20241105_10cm",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          11.31637632165577,
+          47.52637673872775
+        ],
+        [
+          11.31637632165577,
+          47.53158992279433
+        ],
+        [
+          11.304866670991222,
+          47.53158992279433
+        ],
+        [
+          11.304866670991222,
+          47.52637673872775
+        ],
+        [
+          11.31637632165577,
+          47.52637673872775
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    11.304866670991222,
+    47.52637673872775,
+    11.31637632165577,
+    47.53158992279433
+  ],
+  "properties": {
+    "topo4d:tz": "UTC+1",
+    "topo4d:native_crs": "EPSG:25832",
+    "topo4d:data_type": "pointcloud",
+    "topo4d:spatial_resolution": 0.1,
+    "topo4d:measurement_error": 0.02,
+    "topo4d:productmeta": {
+      "product_name": "M3C2",
+      "lastupdate": "2025-06-19T00:00:00",
+      "param": {
+        "param": 0.5
+      },
+      "product_level": "L1"
+    },
+    "datetime": "2024-11-05T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    }
+  ],
+  "assets": {
+    "pointcloud": {
+      "href": "./demo/Isar/data/Isar_m3c2/Isar_m3c2_20240812_20241105_10cm.copc.laz",
+      "type": "application/vnd.laszip+copc",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "Isar_pointclouds_collection"
+}

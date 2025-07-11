@@ -16,10 +16,14 @@ By standardizing metadata formats, this extension makes 4D datasets more accessi
 This work is funded by the German Research Foundation (DFG) in the frame of the National Research Data Infrastructure program [NFDI4Earth](https://www.nfdi4earth.de/) (project number: 460036893).
 
 - Examples:
-  - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
-  - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
+  - [Multi-sensor integrated datasets*](./examples/Isar/)
+  - [Near-continuous 4D dataset*](./examples/kijkduin/)
+  - [Item example*](examples/item.json): Shows the basic usage of the extension in a STAC Item
+  - [Collection example*](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
+
+*\* the data in examples are only for test, not real values.*
 
 ## Fields
 

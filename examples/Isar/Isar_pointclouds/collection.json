@@ -1,0 +1,78 @@
+{
+  "type": "Collection",
+  "id": "Isar_pointclouds_collection",
+  "stac_version": "1.1.0",
+  "description": "### Isar Point Clouds Collection\n\nA collection of point cloud from Isar riverbank, near Wallgau, Germany.\n",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Isar Point Clouds Collection"
+    },
+    {
+      "rel": "item",
+      "href": "./Isar_20240812_UPH_10cm.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./Isar_20241105_UPH_10cm.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./Isar_20250325_ULS_10cm.json",
+      "type": "application/geo+json"
+    }
+  ],
+  "title": "Isar Point Clouds Collection",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          11.304168016412058,
+          47.52600520593624,
+          11.3172511501222,
+          47.53281392856261
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-08-12T00:00:00Z",
+          "2025-03-25T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "TUM Remote Sensing Applications",
+      "roles": [
+        "processor",
+        "producer",
+        "licensor",
+        "host"
+      ],
+      "url": "https://www.asg.ed.tum.de/rsa/startseite/"
+    }
+  ],
+  "summaries": {
+    "num_items": {
+      "count": 3
+    },
+    "timestamp_list": {
+      "list": [
+        "2024-08-12T00:00:00",
+        "2024-11-05T00:00:00",
+        "2025-03-25T00:00:00"
+      ]
+    },
+    "temporal_resolution": {
+      "resolution": "half-annual"
+    }
+  }
+}
