@@ -7,13 +7,13 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: [@tum-rsa](https://www.asg.ed.tum.de/en/rsa/home/)
 
-This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([4D-WORKS](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)).
+This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([4D-WORKS](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)). 
 
-This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D data). While it includes support for point clouds, it is designed to be broadly applicable to various types of 4D geospatial data including photogrammetry, and multi-sensor integrated datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist without consistent standards for critical time-dependent information like timestamps and transformation matrices.
+This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D data). While it includes support for point clouds, it is designed to be broadly applicable to various types of 4D geospatial data including photogrammetry, and multi-sensor integrated datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist without consistent standards for critical time-dependent information like timestamps and transformation matrices. 
 
-By standardizing metadata formats, this extension makes 4D datasets more accessible, interoperable, and reusable across different projects and tools, regardless of data sources, acquisition techniques, or temporal sampling intervals. The extension supports automated metadata generation for workflows in fields such as geomorphology, hydrology, ecology, and other disciplines requiring time-series analysis of 3D spatial data.
+By standardizing metadata formats, this extension makes 4D datasets more accessible, interoperable, and reusable across different projects and tools, regardless of data sources, acquisition techniques, or temporal sampling intervals. The extension supports automated metadata generation for workflows in fields such as geomorphology, hydrology, ecology, and other disciplines requiring time-series analysis of 3D spatial data. 
 
-This work is funded by the German Research Foundation (DFG) in the frame of the National Research Data Infrastructure program [NFDI4Earth](https://www.nfdi4earth.de/) (project number: 460036893).
+This work is funded by the German Research Foundation (DFG) in the frame of the National Research Data Infrastructure program [NFDI4Earth](https://www.nfdi4earth.de/) (project number: 460036893). 
 
 - Examples:
   - [Multi-sensor integrated datasets*](./examples/Isar/)
@@ -60,7 +60,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | topo4d:point_count        | Integer | Number of points |
 | topo4d:spatial_resolution | Number  | The spatial resolution, e.g., sampling interval |
 | topo4d:measurement_error  | Number  | System error during measurement or sensor accuracy |
-| topo4d:global_trafo       | Array   | Global transformation matrix, e.g., offset|
+| topo4d:global_trafo       | Array   | Global transformation matrix, e.g., offset |
 | topo4d:trafometa          | Object  | An object including all relevant meta information for transformation |
 | topo4d:productmeta       | Object  | Exists if this item is a generated product. This object describe relavant meta information of the product e.g., parameters used to generate products |
 
