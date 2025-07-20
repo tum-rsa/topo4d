@@ -7,17 +7,17 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: [@tum-rsa](https://www.asg.ed.tum.de/en/rsa/home/)
 
-This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([4D-WORKS](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)). 
+This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([4D-WORKS](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)).
 
-This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D data). While it includes support for point clouds, it is designed to be broadly applicable to various types of 4D geospatial data including photogrammetry, and multi-sensor integrated datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist without consistent standards for critical time-dependent information like timestamps and transformation matrices. 
+This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D geographic data). While it notably includes support for point clouds (acquired via laser scanning or photogrammetry), it is designed to be broadly applicable to various types of 4D data including multi-sensor datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist, so far without consistent standards for critical time-dependent information like timestamps and transformation matrices. 
 
-By standardizing metadata formats, this extension makes 4D datasets more accessible, interoperable, and reusable across different projects and tools, regardless of data sources, acquisition techniques, or temporal sampling intervals. The extension supports automated metadata generation for workflows in fields such as geomorphology, hydrology, ecology, and other disciplines requiring time-series analysis of 3D spatial data. 
+By implementing community conventions in a standardized metadata format, this extension makes 4D datasets more accessible, interoperable, and reusable across different projects and tools, regardless of data sources, acquisition techniques, or temporal sampling intervals. The extension supports automated metadata generation for workflows in fields such as geomorphology, hydrology, ecology, and other disciplines requiring time-series analysis of 3D geographic data. 
 
 This work is funded by the German Research Foundation (DFG) in the frame of the National Research Data Infrastructure program [NFDI4Earth](https://www.nfdi4earth.de/) (project number: 460036893). 
 
 - Examples:
-  - [Multi-sensor integrated datasets*](./examples/Isar/)
-  - [Near-continuous 4D dataset*](./examples/kijkduin/)
+  - [Multi-sensor point clouds*](./examples/Isar/)
+  - [Near-continuous 3D time series*](./examples/kijkduin/)
   - [Item example*](examples/item.json): Shows the basic usage of the extension in a STAC Item
   - [Collection example*](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
@@ -79,7 +79,7 @@ The fields in the table below can be used in these parts of STAC documents:
 ### productmeta Object
 | Field Name    | Type        | Description  |
 |---------------|-------------|---------------------|
-| product_name  | String      | e.g., m3c2, DEM, etc  |
+| product_name  | String      | e.g., m3c2, DEM, etc.  |
 | lastupdate    | String    | e.g., generated datetime   |
 | param         | Object/Dict | e.g., product-related parameters   |
 | derived_from  | Object/Link | e.g., the data source   |
