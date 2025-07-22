@@ -51,11 +51,11 @@ The fields in the table below can be used in these parts of STAC documents:
 | datetime                  | String  | **REQUIRED.** Timestamp of data collection (ISO 8601 format) |
 | topo4d:data_type          | String  | **REQUIRED.** The type of data: pointcloud, mesh, raster, vector, text |
 | topo4d:tz                 | String  | Timezone of the data collection, e.g., "UTC+1", "Europe/Munich" |
-| topo4d:acquisition_mode   | String  | Acquisition method: "ULS" (drone lidar), "UPH" (drone photogrammetry), "TLS" (terrestrial laser scanning) |
+| topo4d:acquisition_mode   | String  | Acquisition method, such as "ULS", "UPH", "TLS", refer to [topo4d:acquisition_mode](#field-usage-guidelines) |
 | topo4d:duration           | Number  | Time duration of the measurement in seconds |
 | topo4d:spatial_resolution | Number  | Spatial resolution in meters (sampling interval or grid spacing) |
 | topo4d:measurement_error  | Number  | System measurement error or sensor accuracy in meters |
-| topo4d:orientation        | String  | UAV survey pattern: "Nadir", "Nadir+Oblique" |
+| topo4d:orientation        | String  | Survey pattern: "Nadir", "Oblique", "Nadir+Oblique" |
 | topo4d:global_trafo       | Array   | 4x4 transformation matrix for 3D point cloud georeferencing |
 | topo4d:trafometa          | [Object](#trafometa-object) | Metadata for inter-epoch transformations and co-registration |
 | topo4d:productmeta        | [Object](#productmeta-object) | Metadata for derived products including processing parameters |
@@ -83,7 +83,7 @@ The `topo4d:productmeta` object describes derived data products:
 | product_name  | String      | Product identifier (e.g., "M3C2", "DEM", "Mesh") |
 | param         | Object      | Processing parameters specific to the product type |
 | derived_from  | Object/Link | Reference to source data or processing chain |
-| product_level | String      | Processing level following STAC conventions (L0, L1, L2, etc.) |
+| product_level | String      | Processing level following [Processing Extension](https://github.com/stac-extensions/processing?tab=readme-ov-file#suggested-processing-levels) (L0, L1, L2, etc.) |
 
 ### External Asset References
 
@@ -134,8 +134,8 @@ Use standardized abbreviations:
 **Spatial Resolution and Measurement Error**
 Express both in consistent units (meters). For point clouds:
 ```json
-"topo4d:spatial_resolution": 0.05,  // 5cm point spacing
-"topo4d:measurement_error": 0.02    // 2cm accuracy
+"topo4d:spatial_resolution": 0.05,
+"topo4d:measurement_error": 0.02
 ```
 
 **topo4d:global_trafo vs proj:transform**
