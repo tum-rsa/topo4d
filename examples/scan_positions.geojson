@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.92, 1.35, 0]
+      },
+      "properties": {
+        "station_id": "TLS001",
+        "setup_timestamp": "2020-12-11T22:30:00Z",
+        "elevation_reference": "Mean Sea Level"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.95, 1.36, 0]
+      },
+      "properties": {
+        "station_id": "TLS002",
+        "setup_timestamp": "2020-12-11T22:32:30Z",
+        "elevation_reference": "Mean Sea Level"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.97, 1.38, 0]
+      },
+      "properties": {
+        "station_id": "TLS003",
+        "setup_timestamp": "2020-12-11T22:35:00Z",
+        "elevation_reference": "Mean Sea Level"
+      }
+    }
+  ]
+}

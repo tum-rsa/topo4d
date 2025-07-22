@@ -2,6 +2,9 @@
   "type": "Feature",
   "stac_version": "1.1.0",
   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
     "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
   ],
   "id": "161112_080111",
@@ -40,9 +43,8 @@
   ],
   "properties": {
     "topo4d:tz": "Europe/Amsterdam",
-    "topo4d:native_crs": "EPSG:7415",
     "topo4d:data_type": "pointcloud",
-    "topo4d:sensor": "RIEGL VZ2000",
+    "topo4d:acquisition_mode": "TLS",
     "topo4d:global_trafo": [
       [
         0.708647477,
@@ -69,6 +71,13 @@
         1
       ]
     ],
+    "proj:code": "EPSG:7415",
+    "instruments": [
+      "RIEGL VZ2000"
+    ],
+    "pc:count": 1136136,
+    "pc:type": "lidar",
+    "timestamps:published": "2021-04-01T00:00:00Z",
     "topo4d:trafometa": {
       "reference_epoch": {
         "rel": "161111_200058",

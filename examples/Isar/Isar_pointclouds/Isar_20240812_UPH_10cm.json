@@ -2,6 +2,9 @@
   "type": "Feature",
   "stac_version": "1.1.0",
   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
     "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
   ],
   "id": "Isar_20240812_UPH_10cm",
@@ -40,12 +43,18 @@
   ],
   "properties": {
     "topo4d:tz": "UTC+1",
-    "topo4d:native_crs": "EPSG:25832",
     "topo4d:data_type": "pointcloud",
-    "topo4d:sensor": "DJI Phantom 4 RTK",
+    "topo4d:acquisition_mode": "UPH",
     "topo4d:orientation": "Nadir",
     "topo4d:spatial_resolution": 0.1,
     "topo4d:measurement_error": 0.04,
+    "proj:code": "EPSG:25832",
+    "instruments": [
+      "DJI Phantom 4 RTK"
+    ],
+    "pc:count": 23314488,
+    "pc:type": "other",
+    "timestamps:published": "2025-05-05T00:00:00Z",
     "topo4d:trafometa": {
       "reference_epoch": {
         "rel": "Isar_20241105_UPH_10cm",

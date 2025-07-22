@@ -26,7 +26,6 @@
                 {
                   "$comment": "Require fields here for Item Properties.",
                   "required": [
-                    "topo4d:native_crs",
                     "datetime",
                     "topo4d:data_type"
                   ]
@@ -166,7 +165,6 @@
     },    "require_any_field": {
       "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
       "anyOf": [
-        {"required": ["topo4d:native_crs"]},
         {"required": ["datetime"]},
         {"required": ["topo4d:data_type"]}
       ]
@@ -174,10 +172,6 @@
       "$comment": "All fields defined here can be used in different contexts. Item Properties fields are prefixed with 'topo4d:'. Collection Summary fields are not prefixed and include num_items, timestamp_list, temporal_resolution, and attribute_list.",
       "type": "object",
       "properties": {        
-        "topo4d:native_crs": {
-          "type": "string",
-          "description": "The spatial reference to apply to the data, e.g., 'epsg:32634' (Item Property - REQUIRED)"
-        },
         "topo4d:data_type": {
           "type": "string",
           "description": "The type of data, e.g., lidar, image, text (Item Property - REQUIRED)"
@@ -185,10 +179,6 @@
         "topo4d:tz": {
           "type": "string",
           "description": "The timezone of the data (Item Property)"
-        },
-        "topo4d:sensor": {
-          "type": "string",
-          "description": "The sensor used for data acquisition, e.g., Zenmuse L2, Camera (Item Property)"
         },
         "topo4d:acquisition_mode": {
           "type": "string",
@@ -198,22 +188,6 @@
           "type": "number",
           "description": "The duration of the acquisition in seconds"
         },
-        "topo4d:trajectory": {
-          "type": "array",
-          "description": "Flight trajectory with timestamps. UAV only."
-        },
-        "topo4d:scan_positions": {
-          "type": "array",
-          "description": "List of scan positions (X, Y, Z)"
-        },
-        "topo4d:orientation": {
-          "type": "string",
-          "description": "The orientation of the scan, e.g., nadir, oblique angles"
-        },
-        "topo4d:point_count": {
-          "type": "integer",
-          "description": "Number of points"
-        },
         "topo4d:spatial_resolution": {
           "type": "number",
           "description": "The spatial resolution, e.g., sampling interval"
@@ -221,10 +195,6 @@
         "topo4d:measurement_error": {
           "type": "number",
           "description": "System error during measurement or sensor accuracy"
-        },
-        "topo4d:global_trafo": {
-          "type": "array",
-          "description": "Global transformation matrix, e.g., offset"
         },
         "topo4d:trafometa": {
           "type": "object",
@@ -270,10 +240,6 @@
               "type": "string",
               "description": "e.g., m3c2, DEM, etc"
             },            
-            "lastupdate": {
-              "type": "string",
-              "description": "Generated datetime"
-            },
             "param": {
               "type": "object",
               "description": "e.g., product-related parameters"
@@ -295,7 +261,7 @@
           "$comment": "Above, change `template` to the prefix of this extension"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "CollectionSummaryFields": {
       "description": "Fields that are mandatory under the Collection summaries.",

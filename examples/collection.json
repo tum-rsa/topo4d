@@ -2,7 +2,8 @@
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/pointcloud/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "collection",
@@ -45,19 +46,26 @@
       "roles": [
         "data"
       ],
-      "type": "application/octet-stream",
+      "type": "application/vnd.laszip+copc",
       "title": "Point Cloud Data",
       "description": "Template for point cloud data assets",
-      "topo4d:data_type": "pointcloud",
-      "topo4d:native_crs": "EPSG:4326"
+      "topo4d:data_type": "pointcloud"
     },
     "trajectory": {
       "roles": [
         "metadata"
       ],
-      "type": "application/json",
+      "type": "application/geo+json",
       "title": "Trajectory Data",
       "description": "Flight trajectory information"
+    },
+    "scan_positions": {
+      "roles": [
+        "metadata"
+      ],
+      "type": "application/json",
+      "title": "Scan Positions",
+      "description": "Terrestrial scan position information"
     }
   },
   "summaries": {

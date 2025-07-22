@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.92, 1.35, 50]
+      },
+      "properties": {
+        "timestamp": "2020-12-11T22:35:12Z",
+        "sequence": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.95, 1.36, 50]
+      },
+      "properties": {
+        "timestamp": "2020-12-11T22:36:48Z",
+        "sequence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [172.97, 1.38, 50]
+      },
+      "properties": {
+        "timestamp": "2020-12-11T22:38:24Z",
+        "sequence": 2
+      }
+    }
+  ]
+}

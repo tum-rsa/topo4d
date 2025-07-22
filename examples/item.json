@@ -1,7 +1,10 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/pointcloud/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
   ],
   "type": "Feature",
   "id": "item",
@@ -40,85 +43,47 @@
   },
   "properties": {
     "datetime": "2020-12-11T22:38:32Z",
-    "topo4d:native_crs": "EPSG:4326",
-    "topo4d:data_type": "pointcloud",
-    "topo4d:tz": "CET +1",
-    "topo4d:sensor": "Zenmuse L2",
-    "topo4d:acquisition_mode": "ULS",
-    "topo4d:duration": 120.5,
-    "topo4d:trajectory": [
+    "proj:code": "EPSG:4326",
+    "instruments": [
+      "zenmuse-l2"
+    ],
+    "platform": "dji-m300-rtk",
+    "proj:transform": [
+      1,
+      0,
+      172.9,
+      0,
+      -1,
+      1.4
+    ],
+    "pc:count": 1250000,
+    "pc:type": "lidar",
+    "pc:encoding": "copc",
+    "pc:schemas": [
       {
-        "position": [
-          172.92,
-          1.35,
-          50
-        ],
-        "timestamp": "2020-12-11T22:35:12Z"
+        "name": "X",
+        "size": 4,
+        "type": "floating"
       },
       {
-        "position": [
-          172.95,
-          1.36,
-          50
-        ],
-        "timestamp": "2020-12-11T22:36:48Z"
+        "name": "Y",
+        "size": 4,
+        "type": "floating"
       },
       {
-        "position": [
-          172.97,
-          1.38,
-          50
-        ],
-        "timestamp": "2020-12-11T22:38:24Z"
+        "name": "Z",
+        "size": 4,
+        "type": "floating"
       }
     ],
-    "topo4d:scan_positions": [
-      [
-        172.92,
-        1.35,
-        0
-      ],
-      [
-        172.95,
-        1.36,
-        0
-      ],
-      [
-        172.97,
-        1.38,
-        0
-      ]
-    ],
-    "topo4d:orientation": "nadir",
-    "topo4d:point_count": 1250000,
+    "timestamps:published": "2021-02-15T08:30:00.000Z",
+    "topo4d:data_type": "pointcloud",
+    "topo4d:tz": "CET +1",
+    "topo4d:acquisition_mode": "ULS",
+    "topo4d:orientation": "Nadir+Oblique",
+    "topo4d:duration": 120.5,
     "topo4d:spatial_resolution": 0.05,
     "topo4d:measurement_error": 0.03,
-    "topo4d:global_trafo": [
-      [
-        1,
-        0,
-        0,
-        0
-      ],
-      [
-        0,
-        1,
-        0,
-        0
-      ],
-      [
-        0,
-        0,
-        1,
-        0
-      ],
-      [
-        0,
-        0,
-        0,
-        1
-      ]
-    ],
     "topo4d:trafometa": {
       "reference_epoch": {
         "rel": "reference_epoch",
@@ -183,14 +148,13 @@
     },
     "topo4d:productmeta": {
       "product_name": "DEM",
-      "lastupdate": "2021-02-15T08:30:00.000Z",
       "param": {
         "resolution": 0.1,
         "algorithm": "IDW",
         "filter": "vegetation removed"
       },
       "derived_from": "https://example.com/examples/file.xyz",
-      "product_level": "L3"
+      "product_level": "L1"
     }
   },
   "links": [
@@ -204,9 +168,27 @@
       "href": "https://example.com/examples/file.copc.laz",
       "type": "application/vnd.laszip+copc",
       "title": "Point Cloud Data",
-      "description": "Raw point cloud data in XYZ format",
+      "description": "Raw point cloud data in COPC LAZ format",
       "roles": [
         "data"
+      ]
+    },
+    "trajectory": {
+      "href": "./trajectory.geojson",
+      "type": "application/geo+json",
+      "title": "Flight Trajectory",
+      "description": "UAV flight trajectory with timestamps",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "scan_positions": {
+      "href": "./scan_positions.geojson",
+      "type": "application/geo+json",
+      "title": "Scan Positions",
+      "description": "List of terrestrial scan positions with coordinates",
+      "roles": [
+        "metadata"
       ]
     }
   }

@@ -2,6 +2,9 @@
   "type": "Feature",
   "stac_version": "1.1.0",
   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
     "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
   ],
   "id": "Isar_m3c2_20240812_20241105_10cm",
@@ -40,13 +43,16 @@
   ],
   "properties": {
     "topo4d:tz": "UTC+1",
-    "topo4d:native_crs": "EPSG:25832",
     "topo4d:data_type": "pointcloud",
     "topo4d:spatial_resolution": 0.1,
     "topo4d:measurement_error": 0.02,
+    "proj:code": "EPSG:25832",
+    "instruments": [],
+    "pc:count": 23314488,
+    "pc:type": "other",
+    "timestamps:published": "2025-06-19T00:00:00Z",
     "topo4d:productmeta": {
       "product_name": "M3C2",
-      "lastupdate": "2025-06-19T00:00:00",
       "param": {
         "param": 0.5
       },
@@ -59,19 +65,19 @@
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar Point Clouds Collection"
+      "title": "Isar M3C2 Collection"
     },
     {
       "rel": "collection",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar Point Clouds Collection"
+      "title": "Isar M3C2 Collection"
     },
     {
       "rel": "parent",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar Point Clouds Collection"
+      "title": "Isar M3C2 Collection"
     }
   ],
   "assets": {
@@ -83,5 +89,5 @@
       ]
     }
   },
-  "collection": "Isar_pointclouds_collection"
+  "collection": "Isar_m3c2_collection"
 }

@@ -1,14 +1,14 @@
 {
   "type": "Collection",
-  "id": "Isar_pointclouds_collection",
+  "id": "Isar_m3c2_collection",
   "stac_version": "1.1.0",
-  "description": "### Isar Point Clouds Collection\n\nA collection of m3c2 distances from Isar riverbank, near Wallgau, Germany.\n",
+  "description": "### Isar M3C2 Collection\n\nA collection of M3C2 distance from Isar riverbank, near Wallgau, Germany.\n",
   "links": [
     {
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar Point Clouds Collection"
+      "title": "Isar M3C2 Collection"
     },
     {
       "rel": "item",
@@ -21,7 +21,7 @@
       "type": "application/geo+json"
     }
   ],
-  "title": "Isar Point Clouds Collection",
+  "title": "Isar M3C2 Collection",
   "extent": {
     "spatial": {
       "bbox": [
