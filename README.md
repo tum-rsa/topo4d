@@ -57,11 +57,10 @@ The fields in the table below can be used in these parts of STAC documents:
 | topo4d:measurement_error  | Number  | System measurement error or sensor accuracy in meters |
 | topo4d:orientation        | String  | UAV survey pattern: "Nadir", "Nadir+Oblique" |
 | topo4d:global_trafo       | Array   | 4x4 transformation matrix for 3D point cloud georeferencing |
-| topo4d:trafometa          | [Object](#trafometa-object)  | Metadata for inter-epoch transformations and co-registration |
-| topo4d:productmeta       | [Object](#productmeta-object)  | Metadata for derived products including processing parameters |
+| topo4d:trafometa          | [Object](#trafometa-object) | Metadata for inter-epoch transformations and co-registration |
+| topo4d:productmeta        | [Object](#productmeta-object) | Metadata for derived products including processing parameters |
 
-
-### trafometa Object
+#### trafometa Object
 
 The `topo4d:trafometa` object contains transformation metadata for multi-epoch alignment:
 
@@ -75,7 +74,7 @@ The `topo4d:trafometa` object contains transformation metadata for multi-epoch a
 | translation           | Array  | 3D translation vector (when transformation not provided) |
 | reduction_point       | Array  | Origin shift for numerical stability |
 
-### productmeta Object
+#### productmeta Object
 
 The `topo4d:productmeta` object describes derived data products:
 
@@ -95,7 +94,8 @@ Large array data is stored as separate asset files to improve performance and ma
 | trajectory | GeoJSON | UAV flight paths with timestamps |
 | scan_positions | GeoJSON | Terrestrial scanning positions (X,Y,Z coordinates) |
 
-### Example Asset Reference
+**Example Asset Reference**
+
 ```json
 "assets": {
   "trajectory": {
@@ -112,38 +112,38 @@ Large array data is stored as separate asset files to improve performance and ma
 
 ### Field Usage Guidelines
 
-#### **datetime and topo4d:tz**
+**datetime and topo4d:tz**
 Always specify acquisition time in ISO 8601 format. Use `topo4d:tz` to clarify the local timezone for fieldwork coordination:
 ```json
 "datetime": "2024-08-12T10:30:00Z",
 "topo4d:tz": "Europe/Munich"
 ```
 
-#### **topo4d:data_type**
+**topo4d:data_type**
 Choose the most specific data type. For point clouds from different sources:
 - `"pointcloud"` - Raw 3D point measurements
 - Processing derivatives may use other types (e.g., `"raster"`, `"mesh"`, `"vector"`, `"text"`, `"other"`)
 
-#### **topo4d:acquisition_mode**
+**topo4d:acquisition_mode**
 Use standardized abbreviations:
 - `"ULS"` - Uncrewed Aerial System with LiDAR sensor
 - `"UPH"` - Uncrewed Aerial System with photogrammetry
 - `"TLS"` - Terrestrial Laser Scanning
 - `"MLS"` - Mobile Laser Scanning
 
-#### **Spatial Resolution and Measurement Error**
+**Spatial Resolution and Measurement Error**
 Express both in consistent units (meters). For point clouds:
 ```json
 "topo4d:spatial_resolution": 0.05,  // 5cm point spacing
 "topo4d:measurement_error": 0.02    // 2cm accuracy
 ```
 
-#### **topo4d:global_trafo vs proj:transform**
+**topo4d:global_trafo vs proj:transform**
 - Use `topo4d:global_trafo` for 3D point cloud transformations (4x4 matrices)
 - Use `proj:transform` from the Projection extension for 2D raster coordinate transforms
 - These serve different purposes and should not be confused
 
-#### **Transformation Workflows**
+**Transformation Workflows**
 For multi-epoch datasets, use `topo4d:trafometa` to document co-registration:
 ```json
 "topo4d:trafometa": {
@@ -172,11 +172,11 @@ For multi-epoch datasets, use `topo4d:trafometa` to document co-registration:
 
 The topo4d extension is designed to work alongside existing STAC extensions:
 
-### [Point Cloud Extension](https://github.com/stac-extensions/pointcloud/tree/main)
+- [Point Cloud Extension](https://github.com/stac-extensions/pointcloud/tree/main)
 ```json
 "stac_extensions": [
   "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
-  "https://stac-extensions.github.io/pointcloud/v1.0.0/schema.json"
+  "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json"
 ],
 "pc:count": 1500000,
 "pc:type": "lidar",
@@ -185,17 +185,17 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 "topo4d:spatial_resolution": 0.05
 ```
 
-### [Projection Extension](https://github.com/stac-extensions/projection?tab=readme-ov-file#fields)
+- [Projection Extension](https://github.com/stac-extensions/projection?tab=readme-ov-file#fields)
 ```json
 "stac_extensions": [
   "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
-  "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+  "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 ],
 "proj:code": "EPSG:25832",
 "topo4d:global_trafo": [[0.999, 0.001, 0, 1.5], [...]],
 ```
 
-### [Timestamps Extension](https://github.com/stac-extensions/timestamps)
+- [Timestamps Extension](https://github.com/stac-extensions/timestamps)
 ```json
 "stac_extensions": [
   "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
@@ -206,7 +206,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 "topo4d:tz": "Europe/Berlin"
 ```
 
-### [Common Metadata](https://github.com/radiantearth/stac-spec/blob/master/commons/common-metadata.md)
+- [Common Metadata](https://github.com/radiantearth/stac-spec/blob/master/commons/common-metadata.md)
 Use standard STAC fields alongside topo4d-specific properties:
 ```json
 "instruments": ["riegl-vz2000"],
