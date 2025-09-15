@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "Isar_m3c2_collection",
   "stac_version": "1.1.0",
-  "description": "### Isar M3C2 Collection\n\nA collection of M3C2 distance from Isar riverbank, near Wallgau, Germany.\n",
+  "description": "### Isar M3C2 Products Collection\n\nA collection of M3C2 products from Isar riverbank, near Wallgau, Germany.\n",
   "links": [
     {
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar M3C2 Collection"
+      "title": "Isar M3C2 Products Collection"
     },
     {
       "rel": "item",
@@ -21,7 +21,7 @@
       "type": "application/geo+json"
     }
   ],
-  "title": "Isar M3C2 Collection",
+  "title": "Isar M3C2 Products Collection",
   "extent": {
     "spatial": {
       "bbox": [

@@ -47,7 +47,7 @@
     "instruments": [
       "zenmuse-l2"
     ],
-    "platform": "dji-m300-rtk",
+    "platform": "dji-m350-rtk",
     "proj:transform": [
       1,
       0,

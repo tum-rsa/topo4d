@@ -5,7 +5,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
     "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+    "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
   ],
   "id": "Isar_m3c2_20240812_20250325_10cm",
   "geometry": {
@@ -65,19 +65,19 @@
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar M3C2 Collection"
+      "title": "Isar M3C2 Products Collection"
     },
     {
       "rel": "collection",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar M3C2 Collection"
+      "title": "Isar M3C2 Products Collection"
     },
     {
       "rel": "parent",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "Isar M3C2 Collection"
+      "title": "Isar M3C2 Products Collection"
     }
   ],
   "assets": {

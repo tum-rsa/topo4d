@@ -5,7 +5,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
     "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+    "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
   ],
   "id": "Isar_20240812_UPH_10cm",
   "geometry": {
@@ -64,28 +64,28 @@
       },
       "transformation": [
         [
-          1,
-          -0.000013,
+          1.0,
+          -1.3e-05,
           -0.000225,
           0.195904
         ],
         [
-          0.000013,
-          1,
+          1.3e-05,
+          1.0,
           -0.000156,
           0.14175
         ],
         [
           0.000225,
           0.000156,
-          1,
+          1.0,
           -0.047578
         ],
         [
-          0,
-          0,
-          0,
-          1
+          0.0,
+          0.0,
+          0.0,
+          1.0
         ]
       ]
     },

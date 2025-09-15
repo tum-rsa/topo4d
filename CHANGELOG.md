@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+
+## [v0.1.0]
+
+The pre-release version for testing the accessibility and validation of this STAC extension hosted by https://github.com/tum-rsa.
+
+### Changed
+
+- `topo4d:tz` is replaced by `topo4d:timezone`
+- Identifier: <https://stac-extensions.github.io/topo4d/v1.0.0/schema.json> is replaced by <https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json>
+
+
 ## [Unreleased]
 
 ### Added
@@ -27,4 +39,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-[Unreleased]: <https://github.com/stac-extensions/topo4d/compare/v1.0.0...HEAD>
+[v0.1.0]: <https://github.com/tum-rsa/topo4d/v0.1.0>
+[Unreleased]: <https://github.com/tum-rsa/topo4d...HEAD>

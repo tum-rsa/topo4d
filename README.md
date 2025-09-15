@@ -1,7 +1,7 @@
 # Topographic 4D Extension Specification
 
 - **Title:** Topographic 4D
-- **Identifier:** <https://stac-extensions.github.io/topo4d/v1.0.0/schema.json>
+- **Identifier:** <https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json>
 - **Field Name Prefix:** topo4d
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
@@ -50,7 +50,7 @@ The fields in the table below can be used in these parts of STAC documents:
 |---------------------------|---------|--------------------------------|
 | datetime                  | String  | **REQUIRED.** Timestamp of data collection (ISO 8601 format) |
 | topo4d:data_type          | String  | **REQUIRED.** The type of data: pointcloud, mesh, raster, vector, text |
-| topo4d:tz                 | String  | Timezone of the data collection, e.g., "UTC+1", "Europe/Munich" |
+| topo4d:timezone                 | String  | Timezone of the data collection, e.g., "UTC+1", "Europe/Munich" |
 | topo4d:acquisition_mode   | String  | Acquisition method, such as "ULS", "UPH", "TLS", refer to [topo4d:acquisition_mode](#field-usage-guidelines) |
 | topo4d:duration           | Number  | Time duration of the measurement in seconds |
 | topo4d:spatial_resolution | Number  | Spatial resolution in meters (sampling interval or grid spacing) |
@@ -112,11 +112,11 @@ Large array data is stored as separate asset files to improve performance and ma
 
 ### Field Usage Guidelines
 
-**datetime and topo4d:tz**
-Always specify acquisition time in ISO 8601 format. Use `topo4d:tz` to clarify the local timezone for fieldwork coordination:
+**datetime and topo4d:timezone**
+Always specify acquisition time in ISO 8601 format. Use `topo4d:timezone` to clarify the local timezone for fieldwork coordination:
 ```json
 "datetime": "2024-08-12T10:30:00Z",
-"topo4d:tz": "Europe/Munich"
+"topo4d:timezone": "Europe/Munich"
 ```
 
 **topo4d:data_type**
@@ -175,7 +175,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Point Cloud Extension](https://github.com/stac-extensions/pointcloud/tree/main)
 ```json
 "stac_extensions": [
-  "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
+  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json"
 ],
 "pc:count": 1500000,
@@ -188,7 +188,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Projection Extension](https://github.com/stac-extensions/projection?tab=readme-ov-file#fields)
 ```json
 "stac_extensions": [
-  "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
+  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 ],
 "proj:code": "EPSG:25832",
@@ -198,19 +198,19 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Timestamps Extension](https://github.com/stac-extensions/timestamps)
 ```json
 "stac_extensions": [
-  "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json",
+  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json"
 ],
 "datetime": "2024-08-12T10:30:00Z",
 "timestamps:published": "2024-08-15T14:20:00Z",
-"topo4d:tz": "Europe/Berlin"
+"topo4d:timezone": "Europe/Berlin"
 ```
 
 - [Common Metadata](https://github.com/radiantearth/stac-spec/blob/master/commons/common-metadata.md)
 Use standard STAC fields alongside topo4d-specific properties:
 ```json
 "instruments": ["riegl-vz2000"],
-"platform": "terrestrial-laser-scanner",
+"platform": "terrestrial-laser-scanner-xxx",
 "topo4d:acquisition_mode": "TLS",
 "topo4d:measurement_error": 0.01
 ```

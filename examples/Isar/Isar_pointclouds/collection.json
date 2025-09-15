@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "Isar_pointclouds_collection",
   "stac_version": "1.1.0",
-  "description": "### Isar Point Clouds Collection\n\nA collection of point cloud from Isar riverbank, near Wallgau, Germany.\n",
+  "description": "### Isar Point Clouds Collection\n\nA collection of point clouds from Isar riverbank, near Wallgau, Germany.\n",
   "links": [
     {
       "rel": "root",

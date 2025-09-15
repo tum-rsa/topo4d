@@ -5,7 +5,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
     "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/topo4d/v1.0.0/schema.json"
+    "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
   ],
   "id": "161112_190130",
   "geometry": {
@@ -65,10 +65,10 @@
         37.853088875
       ],
       [
-        0,
-        0,
-        0,
-        1
+        0.0,
+        0.0,
+        0.0,
+        1.0
       ]
     ],
     "proj:code": "EPSG:7415",
@@ -88,27 +88,27 @@
       "transformation": [
         [
           0.9999999994481961,
-          -0.000023321273394167615,
-          -0.0000236585309648769,
+          -2.3321273394167615e-05,
+          -2.36585309648769e-05,
           -0.00032470903584244236
         ],
         [
-          0.000023320745065369363,
+          2.3320745065369363e-05,
           0.9999999994787242,
-          -0.00002233145881723282,
+          -2.233145881723282e-05,
           0.0008935696728796317
         ],
         [
-          0.000023659051750600653,
-          0.000022330907070340983,
+          2.3659051750600653e-05,
+          2.2330907070340983e-05,
           0.9999999994707898,
           0.00034759235398819566
         ],
         [
-          0,
-          0,
-          0,
-          1
+          0.0,
+          0.0,
+          0.0,
+          1.0
         ]
       ]
     },
@@ -136,7 +136,7 @@
   ],
   "assets": {
     "pointcloud": {
-      "href": "../demo/kijkduin/data/161112/161112_190130.laz",
+      "href": "../../demo/kijkduin/data/161112/161112_190130.laz",
       "type": "application/vnd.laszip+copc",
       "roles": [
         "data"
