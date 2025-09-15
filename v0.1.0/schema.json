@@ -1,0 +1,290 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json#",
+  "title": "Topo4D Extension",
+  "description": "STAC Topo4D Extension for STAC Items and STAC Collections.",
+  "oneOf": [
+    {
+      "$comment": "This is the schema for STAC Items. Remove this object if this extension only applies to Collections.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/stac_extensions"
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "properties",
+            "assets"
+          ],
+          "properties": {
+            "type": {
+              "const": "Feature"
+            },
+            "properties": {
+              "allOf": [
+                {
+                  "$comment": "Require fields here for Item Properties.",
+                  "required": [
+                    "datetime",
+                    "topo4d:data_type"
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/fields"
+                }
+              ]
+            },
+            "assets": {
+              "$comment": "This validates the fields in Item Assets, but does not require them.",
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "$comment": "This is the schema for STAC Collections.",
+      "type": "object",
+      "allOf": [
+        {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "Collection"
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/stac_extensions"
+        }
+      ],
+      "anyOf": [
+        {
+          "$comment": "This is the schema for the top-level fields in a Collection. Remove this if this extension does not define top-level fields for Collections.",
+          "allOf": [            {              "$comment": "Require fields here for Collections (top-level).",
+              "required": [
+                
+              ]
+            },
+            {
+              "$ref": "#/definitions/fields"
+            }
+          ]
+        },
+        {
+          "$comment": "This validates the fields in Collection Assets, but does not require them.",
+          "required": [
+            "assets"
+          ],
+          "properties": {
+            "assets": {
+              "type": "object",
+              "not": {
+                "additionalProperties": {
+                  "not": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/require_any_field"
+                      },
+                      {
+                        "$ref": "#/definitions/fields"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "$comment": "This is the schema for the fields in Item Asset Definitions. It doesn't require any fields.",
+          "required": [
+            "item_assets"
+          ],
+          "properties": {
+            "item_assets": {
+              "type": "object",
+              "not": {
+                "additionalProperties": {
+                  "not": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/require_any_field"
+                      },
+                      {
+                        "$ref": "#/definitions/fields"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },        {
+          "$comment": "This is the schema for the fields in Summaries. By default, only checks the existence of the properties, but not the schema of the summaries.",
+          "required": [
+            "summaries"
+          ],
+          "properties": {              
+            "summaries": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/CollectionSummaryFields"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "stac_extensions": {
+      "type": "object",
+      "required": [
+        "stac_extensions"
+      ],
+      "properties": {
+        "stac_extensions": {
+          "type": "array",
+          "contains": {
+            "const": "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
+          }
+        }
+      }
+    },    "require_any_field": {
+      "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
+      "anyOf": [
+        {"required": ["datetime"]},
+        {"required": ["topo4d:data_type"]}
+      ]
+    },"fields": {
+      "$comment": "All fields defined here can be used in different contexts. Item Properties fields are prefixed with 'topo4d:'. Collection Summary fields are not prefixed and include num_items, timestamp_list, temporal_resolution, and attribute_list.",
+      "type": "object",
+      "properties": {        
+        "topo4d:data_type": {
+          "type": "string",
+          "description": "The type of data, e.g., lidar, image, text (Item Property - REQUIRED)"
+        },
+        "topo4d:tz": {
+          "type": "string",
+          "description": "The timezone of the data (Item Property)"
+        },
+        "topo4d:acquisition_mode": {
+          "type": "string",
+          "description": "The mode of acquisition, e.g., ULS, UPH, TLS"
+        },
+        "topo4d:duration": {
+          "type": "number",
+          "description": "The duration of the acquisition in seconds"
+        },
+        "topo4d:spatial_resolution": {
+          "type": "number",
+          "description": "The spatial resolution, e.g., sampling interval"
+        },
+        "topo4d:measurement_error": {
+          "type": "number",
+          "description": "System error during measurement or sensor accuracy"
+        },
+        "topo4d:trafometa": {
+          "type": "object",
+          "description": "An object including all relevant meta information for transformation",
+          "required": ["reference_epoch"],
+          "properties": {            
+            "reference_epoch": {
+              "type": "object",
+              "format": "uri-reference",
+              "description": "Link to another item or resource representing the reference epoch"
+            },
+            "registration_error": {
+              "type": "number",
+              "description": "Exists if it's a co-registered point cloud"
+            },
+            "transformation": {
+              "type": "array",
+              "description": "Given as a numpy array."
+            },
+            "affine_transformation": {
+              "type": "array",
+              "description": "A 4x4 or 3x4 matrix representing the affine transformation. Given as a numpy array."
+            },
+            "rotation": {
+              "type": "array",
+              "description": "A 3x3 matrix specifying the rotation to apply"
+            },
+            "translation": {
+              "type": "array",
+              "description": "A vector specifying the translation to apply"
+            },
+            "reduction_point": {
+              "type": "array",
+              "description": "A translation vector to apply before applying rotation and scaling"
+            }
+          }
+        },
+        "topo4d:productmeta": {
+          "type": "object",
+          "description": "Exists if this item is a generated product",
+          "properties": {
+            "product_name": {
+              "type": "string",
+              "description": "e.g., m3c2, DEM, etc"
+            },            
+            "param": {
+              "type": "object",
+              "description": "e.g., product-related parameters"
+            },
+            "derived_from": {
+              "type": "string",
+              "format": "uri-reference",
+              "description": "e.g., the data source"
+            },
+            "product_level": {
+              "type": "string",
+              "description": "e.g., processing level"
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^(?!topo4d:)": {
+          "$comment": "Above, change `template` to the prefix of this extension"
+        }
+      },
+      "additionalProperties": true
+    },
+    "CollectionSummaryFields": {
+      "description": "Fields that are mandatory under the Collection summaries.",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "num_items": {
+          "type": "integer",
+          "description": "Number of items (Collection Summary field)"
+        },
+        "timestamp_list": {
+          "type": "array",
+          "description": "List of datetime values (Collection Summary field)"
+        },
+        "temporal_resolution": {
+          "type": "string",
+          "description": "Temporal resolution of multiple acquisition, e.g., monthly, weekly, 1hr (Collection Summary field)"
+        },
+        "attribute_list": {
+          "type": "array",
+          "description": "List of attributes, e.g., [intensity, R, G, B, cls_label] (Collection Summary field)"
+        }
+      }
+    }
+  }
+}
