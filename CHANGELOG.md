@@ -11,7 +11,7 @@ The pre-release version for testing the accessibility and validation of this STA
 ### Changed
 
 - `topo4d:tz` is replaced by `topo4d:timezone`
-- Identifier: <https://stac-extensions.github.io/topo4d/v1.0.0/schema.json> is replaced by <https://github.com/tum-rsa/topo4d/v0.1.0/schema.json>
+- Identifier: <https://stac-extensions.github.io/topo4d/v1.0.0/schema.json> is replaced by <https://tum-rsa.github.io/topo4d/v0.1.0/schema.json>
 
 ## [Unreleased]
 
