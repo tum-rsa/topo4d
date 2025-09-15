@@ -1,7 +1,7 @@
 # Topographic 4D Extension Specification
 
 - **Title:** Topographic 4D
-- **Identifier:** <https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json>
+- **Identifier:** <https://github.com/tum-rsa/topo4d/v0.1.0/schema.json>
 - **Field Name Prefix:** topo4d
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
@@ -175,7 +175,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Point Cloud Extension](https://github.com/stac-extensions/pointcloud/tree/main)
 ```json
 "stac_extensions": [
-  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
+  "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json"
 ],
 "pc:count": 1500000,
@@ -188,7 +188,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Projection Extension](https://github.com/stac-extensions/projection?tab=readme-ov-file#fields)
 ```json
 "stac_extensions": [
-  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
+  "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 ],
 "proj:code": "EPSG:25832",
@@ -198,7 +198,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Timestamps Extension](https://github.com/stac-extensions/timestamps)
 ```json
 "stac_extensions": [
-  "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
+  "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json",
   "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json"
 ],
 "datetime": "2024-08-12T10:30:00Z",

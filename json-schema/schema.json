@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json#",
+  "$id": "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json#",
   "title": "Topo4D Extension",
   "description": "STAC Topo4D Extension for STAC Items and STAC Collections.",
   "oneOf": [
@@ -158,7 +158,7 @@
         "stac_extensions": {
           "type": "array",
           "contains": {
-            "const": "https://https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
+            "const": "https://github.com/tum-rsa/topo4d/v0.1.0/schema.json"
           }
         }
       }
