@@ -54,7 +54,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | topo4d:acquisition_mode   | String  | Acquisition method, such as "ULS", "UPH", "TLS", refer to [topo4d:acquisition_mode](#field-usage-guidelines) |
 | topo4d:duration           | Number  | Time duration of the measurement in seconds |
 | topo4d:spatial_resolution | Number  | Spatial resolution in meters (sampling interval or grid spacing) |
-| topo4d:positional_accuracy  | Number  | The coordinate uncertainty (in meters) caused by measurement or processing |
+| topo4d:positional_accuracy | Number  | The coordinate uncertainty (in meters) caused by measurement or processing |
 | topo4d:orientation        | String  | Survey pattern: "Nadir", "Oblique", "Nadir+Oblique" |
 | topo4d:global_trafo       | Array   | 4x4 transformation matrix for 3D point cloud georeferencing |
 | topo4d:trafometa          | [Object](#trafometa-object) | Metadata for inter-epoch transformations and co-registration |
