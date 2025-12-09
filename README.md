@@ -1,7 +1,7 @@
 # Topographic 4D Extension Specification
 
 - **Title:** Topographic 4D
-- **Identifier:** <https://tum-rsa.github.io/topo4d/v0.1.0/schema.json>
+- **Identifier:** <https://tum-rsa.github.io/topo4d/v0.2.0/schema.json>
 - **Field Name Prefix:** topo4d
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
@@ -54,7 +54,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | topo4d:acquisition_mode   | String  | Acquisition method, such as "ULS", "UPH", "TLS", refer to [topo4d:acquisition_mode](#field-usage-guidelines) |
 | topo4d:duration           | Number  | Time duration of the measurement in seconds |
 | topo4d:spatial_resolution | Number  | Spatial resolution in meters (sampling interval or grid spacing) |
-| topo4d:measurement_error  | Number  | System measurement error or sensor accuracy in meters |
+| topo4d:positional_accuracy  | Number  | The coordinate uncertainty (in meters) caused by measurement or processing |
 | topo4d:orientation        | String  | Survey pattern: "Nadir", "Oblique", "Nadir+Oblique" |
 | topo4d:global_trafo       | Array   | 4x4 transformation matrix for 3D point cloud georeferencing |
 | topo4d:trafometa          | [Object](#trafometa-object) | Metadata for inter-epoch transformations and co-registration |
@@ -131,11 +131,11 @@ Use standardized abbreviations:
 - `"TLS"` - Terrestrial Laser Scanning
 - `"MLS"` - Mobile Laser Scanning
 
-**Spatial Resolution and Measurement Error**
+**Spatial Resolution and Positional Accuracy**
 Express both in consistent units (meters). For point clouds:
 ```json
 "topo4d:spatial_resolution": 0.05,
-"topo4d:measurement_error": 0.02
+"topo4d:positional_accuracy": 0.02
 ```
 
 **topo4d:global_trafo vs proj:transform**
@@ -175,7 +175,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Point Cloud Extension](https://github.com/stac-extensions/pointcloud/tree/main)
 ```json
 "stac_extensions": [
-  "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json",
+  "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json",
   "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json"
 ],
 "pc:count": 1500000,
@@ -188,7 +188,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Projection Extension](https://github.com/stac-extensions/projection?tab=readme-ov-file#fields)
 ```json
 "stac_extensions": [
-  "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json",
+  "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json",
   "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 ],
 "proj:code": "EPSG:25832",
@@ -198,7 +198,7 @@ The topo4d extension is designed to work alongside existing STAC extensions:
 - [Timestamps Extension](https://github.com/stac-extensions/timestamps)
 ```json
 "stac_extensions": [
-  "https://tum-rsa.github.io/topo4d/v0.1.0/schema.jsonn",
+  "https://tum-rsa.github.io/topo4d/v0.2.0/schema.jsonn",
   "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json"
 ],
 "datetime": "2024-08-12T10:30:00Z",
@@ -212,7 +212,7 @@ Use standard STAC fields alongside topo4d-specific properties:
 "instruments": ["riegl-vz2000"],
 "platform": "terrestrial-laser-scanner-xxx",
 "topo4d:acquisition_mode": "TLS",
-"topo4d:measurement_error": 0.01
+"topo4d:positional_accuracy": 0.01
 ```
 
 ## Contributing

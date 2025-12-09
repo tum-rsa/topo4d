@@ -1,7 +1,7 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json",
+    "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json",
     "https://stac-extensions.github.io/pointcloud/v1.0.0/schema.json",
     "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
@@ -83,7 +83,7 @@
     "topo4d:orientation": "Nadir+Oblique",
     "topo4d:duration": 120.5,
     "topo4d:spatial_resolution": 0.05,
-    "topo4d:measurement_error": 0.03,
+    "topo4d:positional_accuracy": 0.03,
     "topo4d:trafometa": {
       "reference_epoch": {
         "rel": "reference_epoch",

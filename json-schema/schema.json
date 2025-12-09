@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json#",
+  "$id": "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json#",
   "title": "Topo4D Extension",
   "description": "STAC Topo4D Extension for STAC Items and STAC Collections.",
   "oneOf": [
@@ -158,7 +158,7 @@
         "stac_extensions": {
           "type": "array",
           "contains": {
-            "const": "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json"
+            "const": "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json"
           }
         }
       }
@@ -192,7 +192,7 @@
           "type": "number",
           "description": "The spatial resolution, e.g., sampling interval"
         },
-        "topo4d:measurement_error": {
+        "topo4d:positional_accuracy": {
           "type": "number",
           "description": "System error during measurement or sensor accuracy"
         },

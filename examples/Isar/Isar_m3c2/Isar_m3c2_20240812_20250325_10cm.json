@@ -5,7 +5,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/pointcloud/v2.0.0/schema.json",
     "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
-    "https://tum-rsa.github.io/topo4d/v0.1.0/schema.json"
+    "https://tum-rsa.github.io/topo4d/v0.2.0/schema.json"
   ],
   "id": "Isar_m3c2_20240812_20250325_10cm",
   "geometry": {
@@ -45,7 +45,7 @@
     "topo4d:tz": "UTC+1",
     "topo4d:data_type": "pointcloud",
     "topo4d:spatial_resolution": 0.1,
-    "topo4d:measurement_error": 0.02,
+    "topo4d:positional_accuracy": 0.02,
     "proj:code": "EPSG:25832",
     "instruments": [],
     "pc:count": 23314488,

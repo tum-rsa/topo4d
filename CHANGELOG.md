@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.0]
+
+### Changed
+
+- `topo4d:measurement_error` is replaced by `topo4d:positional_accuracy`
+- Update the identifier
+
 ## [v0.1.0]
 
 The pre-release version for testing the accessibility and validation of this STAC extension hosted by <https://github.com/tum-rsa>.
@@ -37,4 +44,5 @@ The pre-release version for testing the accessibility and validation of this STA
 ### Fixed
 
 [v0.1.0]: <https://github.com/tum-rsa/topo4d/v0.1.0>
+[v0.2.0]: <https://github.com/tum-rsa/topo4d/v0.2.0>
 [Unreleased]: <https://github.com/tum-rsa/topo4d...HEAD>
