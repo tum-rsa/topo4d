@@ -7,7 +7,7 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: [@tum-rsa](https://www.asg.ed.tum.de/en/rsa/home/)
 
-This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([4D-WORKS](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)).
+This repository explains the Topographic 4D (topo4d) Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification, developed as part of the research project: Development of Standardized Metadata for 3D Time Series Workflows ([project page](https://www.asg.ed.tum.de/en/rsa/research/4d-works/)). A comprehensive guide and usage examples are available at [4D-WORKS](https://tum-rsa.github.io/4D-WORKS/).
 
 This extension provides a standardized approach for handling time-dependent metadata in diverse 4D datasets (time series of 3D geographic data). While it notably includes support for point clouds (acquired via laser scanning or photogrammetry), it is designed to be broadly applicable to various types of 4D data including multi-sensor datasets. It addresses the challenge of managing metadata for topographic observations collected over time, where hundreds or thousands of epochs may exist, so far without consistent standards for critical time-dependent information like timestamps and transformation matrices.
 
